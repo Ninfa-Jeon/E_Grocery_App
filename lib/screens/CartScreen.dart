@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceryapp/models/CartModel.dart';
 import 'package:scoped_model/scoped_model.dart';
+// import 'package:groceryapp/models/CartBloc.dart';
 
 class CartScreen extends StatefulWidget {
   static const String id = 'cart_screen';
@@ -20,13 +21,13 @@ class _CartScreenState extends State<CartScreen> {
       ),
       body: ScopedModelDescendant<CartModel>(
         rebuildOnChange: true,
-        builder: (context, child, model) => model.items.length == 0
+        builder: (context, child, model) => model.cart.length == 0
             ? Center(
                 child: Text('Cart Empty🙁'),
               )
             : ListView.builder(
                 itemBuilder: (BuildContext context, int index) {
-                  List cartItemNames = model.items.keys.toList();
+                  List cartItems = model.cart;
                   return Card(
                     color: Colors.white,
                     elevation: 20.0,
@@ -35,10 +36,10 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                     child: ListTile(
                       leading: IconButton(
-                        tooltip: 'Add one',
+                        tooltip: 'Add item',
                         icon: Icon(Icons.add_circle),
                         onPressed: () {
-                          model.addItem(cartItemNames[index]);
+                          model.addItem(cartItems[index]);
                         },
                       ),
                       trailing: Row(
@@ -46,34 +47,33 @@ class _CartScreenState extends State<CartScreen> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           IconButton(
-                            tooltip: 'Remove one',
+                            tooltip: 'Remove item',
                             icon: Icon(Icons.remove_circle),
                             onPressed: () {
-                              model.removeOnce(cartItemNames[index]);
+                              model.removeItem(cartItems[index]);
                             },
                           ),
                           IconButton(
-                            tooltip: 'Remove all',
+                            tooltip: 'Delete item',
                             icon: Icon(Icons.delete),
                             onPressed: () {
-                              model.removeItem(cartItemNames[index]);
+                              model.deleteItem(cartItems[index]);
                             },
                           ),
                         ],
                       ),
                       title: Text(
-                        cartItemNames[index],
+                        cartItems[index].itemName,
                         style: TextStyle(
                           color: Color(0xFFEF4C5A),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      subtitle: Text(
-                          'Quantity: ${model.items[cartItemNames[index]]}'),
+                      subtitle: Text('Quantity: ${cartItems[index].quantity}'),
                     ),
                   );
                 },
-                itemCount: model.items.length,
+                itemCount: model.cart.length,
               ),
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter/material.dart';
+import 'package:groceryapp/models/CartItem.dart';
 
 class CartModel extends Model {
   List<CartItem> _cart = [];
@@ -46,20 +47,4 @@ class CartModel extends Model {
 
   static CartModel of(BuildContext context) =>
       ScopedModel.of<CartModel>(context);
-}
-
-class CartItem {
-  String itemName;
-  double price;
-  int quantity;
-
-  CartItem({this.itemName, this.price, this.quantity: 1});
-
-  CartItem.fromJson(Map<String, dynamic> json)
-      : itemName = json['title'],
-        price = json['price'],
-        quantity = 1;
-
-  // Map<String, dynamic> toJson() =>
-  //     {'title': itemName, 'price': price, 'quantity': quantity};
 }

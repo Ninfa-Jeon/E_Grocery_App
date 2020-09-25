@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:groceryapp/models/CartModel.dart';
 import 'package:groceryapp/screens/CartScreen.dart';
 import 'package:groceryapp/utilities/JsonData.dart';
+import 'package:groceryapp/models/CartItem.dart';
+// import 'package:groceryapp/models/CartBloc.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String id = 'home_screen';
@@ -52,11 +54,11 @@ class HomeScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              subtitle: Text(json[index]['price'].toString()),
+              subtitle: Text('\$${json[index]['price']}/-'),
               trailing: FlatButton(
                 child: Text('Add to cart'),
                 onPressed: () {
-                  CartModel.of(context).addItem(json[index]['title']);
+                  CartModel.of(context).addItem(CartItem.fromJson(json[index]));
                 },
               ),
             ),
