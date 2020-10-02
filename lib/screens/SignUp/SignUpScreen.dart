@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:groceryapp/screens/HomeScreen.dart';
-import 'package:groceryapp/screens/SignInScreen.dart';
-import 'package:groceryapp/utilities/constants.dart';
+import 'package:groceryapp/screens/Home/HomeScreen.dart';
+import 'package:groceryapp/screens/SignIn/SignInScreen.dart';
+import 'package:groceryapp/constants/constantDecoration.dart';
 
 class SignUp extends StatelessWidget {
   static const String id = 'sign_up_screen';

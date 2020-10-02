@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceryapp/models/CartModel.dart';
 import 'package:scoped_model/scoped_model.dart';
-// import 'package:groceryapp/models/CartBloc.dart';
+// import 'package:groceryapp/blocs/CartBloc.dart';
 
 class CartScreen extends StatefulWidget {
   static const String id = 'cart_screen';

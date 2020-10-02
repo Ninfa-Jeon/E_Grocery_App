@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceryapp/screens/SignInScreen.dart';
-import 'package:groceryapp/screens/SignUpScreen.dart';
+import 'file:///F:/clg/AndroidStudioProjects/grocery_app/lib/screens/SignIn/SignInScreen.dart';
+import 'file:///F:/clg/AndroidStudioProjects/grocery_app/lib/screens/SignUp/SignUpScreen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static const String id = 'welcome_screen';

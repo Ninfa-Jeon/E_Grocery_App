@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:groceryapp/models/CartModel.dart';
-import 'package:groceryapp/screens/CartScreen.dart';
-import 'package:groceryapp/utilities/JsonData.dart';
+import 'package:groceryapp/screens/Cart/CartScreen.dart';
+import 'package:groceryapp/models/JsonData.dart';
 import 'package:groceryapp/models/CartItem.dart';
-// import 'package:groceryapp/models/CartBloc.dart';
+// import 'package:groceryapp/blocs/CartBloc.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String id = 'home_screen';
@@ -17,12 +17,9 @@ class HomeScreen extends StatelessWidget {
           'The Shop',
         ),
         actions: [
-          IconButton(
-            icon: Icon(
-              Icons.filter_list,
-              color: Colors.white,
-            ),
-            onPressed: () {},
+          Icon(
+            Icons.filter_list,
+            color: Colors.white,
           ),
           IconButton(
             icon: Icon(
@@ -68,53 +65,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-// Container(
-//   height: 150.0,
-//   child: ListView(
-//     padding: EdgeInsets.all(10.0),
-//     scrollDirection: Axis.horizontal,
-//     shrinkWrap: true,
-//     children: [
-//       CircleAvatar(
-//         radius: 70.0,
-//         child: Icon(
-//           Icons.home,
-//           size: 50.0,
-//           color: Color(0xFFEF4C5A),
-//         ),
-//         backgroundColor: Colors.white,
-//       ),
-//       CircleAvatar(
-//         radius: 70.0,
-//         child: Icon(
-//           Icons.card_membership,
-//           size: 50.0,
-//           color: Color(0xFFEF4C5A),
-//         ),
-//         backgroundColor: Colors.white,
-//       ),
-//       CircleAvatar(
-//         radius: 70.0,
-//         child: Icon(
-//           Icons.fastfood,
-//           size: 50.0,
-//           color: Color(0xFFEF4C5A),
-//         ),
-//         backgroundColor: Colors.white,
-//       ),
-//       CircleAvatar(
-//         radius: 70.0,
-//         child: Icon(
-//           Icons.style,
-//           size: 50.0,
-//           color: Color(0xFFEF4C5A),
-//         ),
-//         backgroundColor: Colors.white,
-//       ),
-//     ],
-//   ),
-// ),
-// SizedBox(
-//   height: 20.0,
-// ),

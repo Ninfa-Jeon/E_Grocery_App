@@ -10,6 +10,6 @@ class CartItem {
         price = json['price'],
         quantity = 1;
 
-// Map<String, dynamic> toJson() =>
-//     {'title': itemName, 'price': price, 'quantity': quantity};
+  Map<String, dynamic> toJson() =>
+      {'title': itemName, 'price': price, 'quantity': quantity};
 }

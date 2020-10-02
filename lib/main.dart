@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:groceryapp/screens/CartScreen.dart';
-import 'package:groceryapp/screens/WelcomeScreen.dart';
-import 'package:groceryapp/screens/SignInScreen.dart';
-import 'package:groceryapp/screens/SignUpScreen.dart';
-import 'package:groceryapp/screens/HomeScreen.dart';
+import 'package:groceryapp/screens/Cart/CartScreen.dart';
+import 'package:groceryapp/screens/Welcome/WelcomeScreen.dart';
+import 'package:groceryapp/screens/SignIn/SignInScreen.dart';
+import 'package:groceryapp/screens/SignUp/SignUpScreen.dart';
+import 'package:groceryapp/screens/Home/HomeScreen.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:groceryapp/models/CartModel.dart';
 
